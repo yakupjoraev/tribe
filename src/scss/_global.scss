@@ -1,0 +1,70 @@
+// Container
+.container {
+  max-width: ($containerWidth + $containerPadding) + px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $containerSidePadding + px;
+
+  @media (max-width: $breakpoint1450) {
+    // max-width: 1200px;
+  }
+
+  @media (max-width: $breakpoint992) {
+    // max-width: 970px;
+  }
+
+  @media (max-width: $breakpoint768) {
+    // max-width: 740px;
+  }
+
+  @media (max-width: $breakpoint480) {
+    // max-width: none;
+  }
+}
+
+// Body Locked
+body {
+  background: linear-gradient(18deg, #13131e 0%, #06142f 100%);
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  line-height: 120%;
+  color: var(--white);
+
+  &.locked {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/landing-bg-decor.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 300px;
+    z-index: -1;
+  }
+}
+
+// Animations
+// Fade
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
